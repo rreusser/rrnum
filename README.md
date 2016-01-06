@@ -1,6 +1,6 @@
 # rrnum
 
-> Gobs of sketchy numerical computing code that can maybe be repurposed
+> Gobs of numerical computing code with maybe a couple salvageable pieces
 
 ## Summary
 
