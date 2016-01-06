@@ -6,6 +6,10 @@
 
 For my own sake, just posting this here so I don't lose it. This is from ca. 2005-2007 and reflects an attempt to re-use code. Because I thought numerical experiments in C were a good idea at the time. Yikes. There are probably like three or four useful things in here that can be salvaged.
 
+## Usage
+
+Don't. At best, just grab like maybe the tridiagonal or pentadiagonal solver and move on.
+
 ## What's here
 
 - `calc`
