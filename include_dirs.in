@@ -1,0 +1,1 @@
+INC =		-I../include -I/usr/include -I/usr/local/include -I/sw/include -I/opt/X11/include

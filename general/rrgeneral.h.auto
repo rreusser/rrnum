@@ -1,0 +1,57 @@
+#ifndef __ARRAYOPS_H__
+#define __ARRAYOPS_H__
+void rr_fill(double* arr, double c, int size);
+void rr_ones(double* arr, int size);
+void rr_zeros(double* arr, int size);
+void rr_subtract(double* A, double* B, double* C, int size);
+void rr_add(double* A, double* B, double* C, int size);
+void rr_minusEquals(double* A, double* B, int size);
+void rr_plusEquals(double* A, double* B, int size);
+#endif
+#ifndef __COLOR_H__
+#define __COLOR_H__
+
+void hsv(double h, double s, double v, double* r, double* g, double* b);
+
+typedef struct {
+    double r,g,b;
+} rrColor3f;
+
+typedef struct {
+    double r,g,b,a;
+} rrColor4f;
+
+#endif
+#ifndef __FUNC_H__
+#define __FUNC_H__
+
+#include <math.h>
+
+#define SQR(A) ((A)*(A))
+#define MAX(A,B) ((A)>(B)?(A):(B))
+#define MIN(A,B) ((A)<(B)?(A):(B))
+#define ABS(A) ((A)<0?(-(A)):(A))
+#define SGN(A) ((A)==0?0:((A)>0?1:-1))
+
+
+double arctan(double x, double y);
+/*float fmod(float A, float B);*/
+int imax(int A, int B);
+int imin(int A, int B);
+double dmin(double A, double B);
+double dmax(double A, double B);
+float min(float A, float B);
+float max(float A, float B);
+/*double abs(double A);*/
+void swap(int *A, int *B);
+
+double rrDArrayMin(double* a, int n);
+double rrDArrayMax(double* a, int n);
+int rrDArrayMinIndex(double* a, int n);
+int rrDArrayMaxIndex(double* a, int n);
+double dmax3(double A, double B, double C);
+double dmin3(double A, double B, double C);
+double dabs(double A);
+int dfloor(double A);
+int toggle(int* A);
+#endif

@@ -1,0 +1,17 @@
+#ifndef __FUNC_H__
+#define __FUNC_H__
+
+#include <math.h>
+
+double arctan(double x, double y);
+//float fmod(float A, float B);
+int imax(int A, int B);
+int imin(int A, int B);
+double dmin(double A, double B);
+double dmax(double A, double B);
+float min(float A, float B);
+float max(float A, float B);
+//double abs(double A);
+void swap(int *A, int *B);
+
+#endif

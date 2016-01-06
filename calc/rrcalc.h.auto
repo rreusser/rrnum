@@ -1,0 +1,87 @@
+#ifndef __AB2_H__
+#define __AB2_H__
+
+void rr_ab2(double* y, void (*deriv_func)(double, double*, int, double*), double x, const int n, const double h, double* ypold);
+
+#endif
+#ifndef __EULER_H__
+#define __EULER_H__
+#include <stdlib.h>
+
+void rr_euler(double* y, void (*deriv_func)(double, double*, int, double*), double x, const int n, const double h);
+
+#endif
+#ifndef __NDER_H__
+#define __NDER_H__
+
+double rr_nder(double (*funcPtr)(double), const double x0, const double tol);
+
+double rr_nder_param(double (*funcPtr)(double, double*), const double x0, const double tol, double* param);
+
+double dummy(double a);
+
+#endif
+#ifndef __RK2_H__
+#define __RK2_H__
+
+void rr_rk2(double* y, void (*deriv_func)(double, double*, int, double*), double x, const int n, const double h);
+
+#endif
+#ifndef __STENCIL_H__
+#define __STENCIL_H__
+
+#include <rrdata.h>
+
+void rr_choose_points(int npoints, rr_ibase* ibase, int i, int* ip, double* dp);
+
+void rr_d2y_dx2(int npoints, double *xp, double* an);
+void rr_dy_dx(int npoints, double* xp, double *an);
+
+#endif
+#ifndef __INTEGRATE_H__
+#define __INTEGRATE_H__
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <rrdata.h>
+
+#ifndef __EULER_H__
+#include "euler.h"
+#include "rk2.h"
+#include "rk4.h"
+#include "ab2.h"
+#endif
+
+#define EULER 1
+#define RK2   2
+#define RK4   4
+#define AB2   12
+
+int rr_integrator_type(const char* type);
+
+double** rr_integrate_malloc(const rr_ibase* tbase, const int n);
+void rr_integrate_free(double **y, const int n);
+
+void rr_integrate(const char* cintegrator, double* y, void (*deriv_func)(double,double*,int,double*),const rr_ibase* tbase, const int n);
+
+void rr_integrate_store(const char* cintegrator, double** y, void (*deriv_func)(double,double*,int,double*),const rr_ibase* tbase, const int n);
+
+#endif
+#ifndef __NR_H__
+#define __NR_H__
+#include <stdio.h>
+
+double rr_newton_raphson(double (*func)(double), double guess, double tol, double dx, int nmax, int verbose);
+
+double rr_newton_raphson_param(double (*func)(double,double*), double guess, double tol, double dx, int nmax, int verbose,double* param);
+
+double rr_newton_raphson_param_bounded(double (*func)(double,double*), double guess, double lower, double upper, double tol, double dx, int nmax, int verbose,double* param);
+
+#endif
+#ifndef __RK4_H__
+#define __RK4_H__
+#define RK4 4
+
+void rr_rk4(double* y, void (*deriv_func)(double, double*, int, double*), double x, const int n, const double h);
+
+#endif

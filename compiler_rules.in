@@ -1,0 +1,4 @@
+CC =		cc
+CFLAGS = 	-Wall $(INC) -O3 -g
+LDFLAGS = 	-Wall -O3 -g
+#CFLAGS = 	-Wall $(INC) 
