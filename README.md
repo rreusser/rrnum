@@ -38,7 +38,7 @@ Don't. At best, just grab like maybe the tridiagonal or pentadiagonal solver and
     - Incomplete LU preconditioner (Requires converting row-indexed to column-indexed, which can probably be avoided at a log(N) cost by using a tree.)
     - Biconjugate Gradient solver (does this one work?)
     - Biconjugate Gradient Stabilized (BiCG-Stab) solver. Uses ILU preconditioning and sparse matrix multiplication. I recall this working pretty well, albeit slowly, on a 1000 &times; 1000 structured-curvilinear-grid PDE problem.)
-    - Tridiagonal solver
+    - Tridiagonal solver (***EDIT: Oh jeez. This the code that only worked for symmetric matrices that cost me all that time. Ugh. Test your code. Please.***)
     - Periodic tridiagonal solver
     - Pentadiagonal solver
   - Multigrid - Implements basic prolongation and restriction with Gauss-Seidel iteration on a rectilinear grid. Oof.
